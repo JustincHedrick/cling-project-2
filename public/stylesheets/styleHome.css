@@ -9,19 +9,49 @@ body {
   color:aliceblue;
 }
 
-#train {
+#user-workout {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: gray;
+  height: 5vmin;
+  width: 30vmin;
+  border-radius: 25px 25px 25px 25px;
+}
+
+#user-workout nav {
+  display: flex;
+  width: 30vmin;
+  justify-content: space-evenly;
 }
 
 #big-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   margin: 5vmin 10vmin;
+}
+
+#big-container nav {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 a {
   color: aliceblue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: deepskyblue;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .login {
