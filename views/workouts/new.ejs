@@ -1,25 +1,22 @@
 <%- include('../partials/browseHeader') %>
 
-<main>
-  <form id="new-form" action="/workouts" method="POST">
-    <label>Title:</label>
-    <input type="text" name="title">
-    <label>Release Year:</label>
-    <input type="text" name="releaseYear">
-    <label>MPAA Rating</label>
-    <select name="mpaaRating">
-      <option value="G">G</option>
-      <option value="PG">PG</option>
-      <option value="PG-13">PG-13</option>
-      <option value="R">R</option>
-    </select>
-    <label>Cast (separate actors with commas):</label>
-    <input type="text" name="cast">
-    <label>Now Showing:</label>
-    <input type="checkbox" name="nowShowing" checked>
-    <input type="submit" value="Add Movie">
-  </form>
-</main>
+<div class="big-container">
+  <article>
+    <div class="tension">
+      <input type="radio" id="mk2" name="board">
+      <label for="mk2"></label>
+    </div>
+    <div class="beast">
+      <input type="radio" id="2000" name="board">
+      <label for="2000"></label>
+    </div>
+  </article>
+  <section>
+    <form id="new-training" action="/workouts" method="POST">
+      <label for=""></label>
+    </form>
+  </section>
+</div>
 
 
 

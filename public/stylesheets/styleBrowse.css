@@ -20,7 +20,7 @@ nav {
   justify-content: flex-end;
   align-items: center;
   top: 0px;
-  margin-bottom: 20vmin;
+  margin-bottom: 10vmin;
 }
 
 nav > div {
@@ -37,9 +37,29 @@ nav a {
   text-decoration: none;
 }
 
-main {
+
+#big-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+article {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  height: 60vmin;
+  width: 20vmin;
+}
+
+article > div {
+  margin: 10vmin 0 10vmin 0;
+}
+
+section {
+  height: 60vmin;
+  width: 100vmin;
+  border: 2px white solid;
 }
