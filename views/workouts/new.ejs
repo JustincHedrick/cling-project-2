@@ -18,8 +18,14 @@
       <h2>Create new training regimen with the (board name)</h2>
       <div class="training-form">
         <form id="mk2-form" action="/workouts" method="POST">
-          <label>Hold:</label>
+          <div class="name">
+            <label>Regimen name</label>
+            <input type="text" name="name">
+          </div>
+            <br>
+            <label>Hold:</label>
             <select name="hold">
+              <option value="choose">Select</option>
               <option value="8">8mm</option>
               <option value="10">10mm</option>
               <option value="15">15mm</option>
@@ -46,6 +52,10 @@
             <label>Reps:</label>
             <input type="number" name="reps">
             <label>Hang time:</label>
+            <input type="number" name="time">
+            <div class="button">
+              <button>+</button>
+            </div>
         </form>
       </div>
   </div>

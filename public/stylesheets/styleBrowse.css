@@ -90,4 +90,18 @@ nav a {
   border: 1px solid white;
   width: 100%;
   height: 90%;
+  justify-content: center;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vmin;
 }
