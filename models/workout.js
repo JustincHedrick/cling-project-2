@@ -17,7 +17,7 @@ const workoutSchema = new Schema({
   },
   grip: {
     type: String,
-    enum: ['Jug', 'Sloper', 'Pinch', 'Open hand', 'Half-crimp', 'Full crimp']
+    enum: ['Jug', 'Sloper', 'Pinch', 'Open-hand', 'Half-crimp', 'Full-crimp']
   },
   hold: {
     type: String,

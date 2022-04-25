@@ -4,21 +4,50 @@
   <div class="boards">
     <div class="tension">
       <div class="mk2">
-        <input type="image" id="image" src="https://cdn.shortpixel.ai/spai/w_625+q_glossy+ret_img+to_webp/https://www.tensionclimbing.com/wp-content/uploads/2019/11/WEBfrontMK2.png">
+        <input type="image" id="image-mk2" src="https://cdn.shortpixel.ai/spai/w_625+q_glossy+ret_img+to_webp/https://www.tensionclimbing.com/wp-content/uploads/2019/11/WEBfrontMK2.png">
       </div>
     </div>
     <div class="beast">
       <div class="2000">
-        <input type="image" id="image" src="https://cdn.shopify.com/s/files/1/0424/1145/products/BM-2000-Product_L1160638_800x.jpg?v=1624639590">
+        <input type="image" id="image-2000" src="https://cdn.shopify.com/s/files/1/0424/1145/products/BM-2000-Product_L1160638_800x.jpg?v=1624639590">
       </div>
     </div>
   </div>
   <div class="forms">
     <div class="form-container">
-      <form id="new-training" action="/workouts" method="POST">
-        <label for=""></label>
-      </form>
-    </div>
+      <h2>Create new training regimen with the (board name)</h2>
+      <div class="training-form">
+        <form id="mk2-form" action="/workouts" method="POST">
+          <label>Hold:</label>
+            <select name="hold">
+              <option value="8">8mm</option>
+              <option value="10">10mm</option>
+              <option value="15">15mm</option>
+              <option value="20">20mm</option>
+              <option value="25">25mm</option>
+              <option value="30">30mm</option>
+              <option value="50">50mm</option>
+              <option value="jug">Top jug</option>
+            </select>
+
+          <label>Grip:</label>
+            <select name="grip">
+              <option value="choose">Select</option>
+              <option value="Jug">jug</option>
+              <option value="Sloper">sloper</option>
+              <option value="Pinch">pinch</option>
+              <option value="Open-hand">open hand</option>
+              <option value="Half-crimp">half crimp</option>
+              <option value="Full-crimp">full crimp</option>
+            </select>
+
+            <label>Sets:</label>
+            <input type="number" name="sets" >
+            <label>Reps:</label>
+            <input type="number" name="reps">
+            <label>Hang time:</label>
+        </form>
+      </div>
   </div>
 </div>
 
