@@ -5,10 +5,12 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-color: black;
   color:aliceblue;
+  height: 100vh;
+  margin: 0;
 }
 
 nav {
@@ -17,7 +19,6 @@ nav {
   padding: 0 15px;
   height: 7vmin;
   width: 80%;
-  justify-content: flex-end;
   align-items: center;
   top: 0px;
   margin-bottom: 10vmin;
@@ -37,29 +38,41 @@ nav a {
   text-decoration: none;
 }
 
-
-#big-container {
+.big-container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  width: 100%;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 175vmin;
+  height: 70vmin;
 }
 
-article {
+.boards {
   display: flex;
   flex-direction: column;
+  justify-content:space-evenly;
+  width: 20%;
+  margin-right: 2vmin;
+}
+
+#image {
+  height: 25vmin;
+  width: 35vmin;
+  border-radius: 25% 25% 25% 25%;
+}
+
+#image:focus {
+  border: 2px solid white;
+}
+
+.forms {
+  display: flex;
+  width: 80%;
   justify-content: center;
-  height: 60vmin;
-  width: 20vmin;
+  align-items: center;
 }
 
-article > div {
-  margin: 10vmin 0 10vmin 0;
-}
-
-section {
-  height: 60vmin;
-  width: 100vmin;
-  border: 2px white solid;
+.form-container {
+  border: 1px solid white;
+  height: 100%;
+  width: 95%;
 }
