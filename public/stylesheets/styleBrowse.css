@@ -102,8 +102,11 @@ nav a {
   margin-bottom: 5vmin;
 }
 
-.button {
+.select-all {
   display: flex;
-  justify-content: center;
-  margin-top: 2vmin;
+  flex-direction: column;
+}
+
+.mk2-form {
+  margin: 1vmin;
 }
