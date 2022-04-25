@@ -21,7 +21,16 @@ const workoutSchema = new Schema({
   },
   hold: {
     type: String,
-    enum: []
+    enum: ['8mm', '10mm', '15mm', '20mm', '25mm', '30mm', '50mm', 'Top jug']
+  },
+  set: {
+    type: Number,
+  },
+  rep: {
+    type: Number,
+  },
+  hangTime: {
+    type: Number,
   },
   boards: [boardSchema]
 })

@@ -98,6 +98,8 @@ nav a {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top: 2vmin;
+  margin-bottom: 5vmin;
 }
 
 .button {
