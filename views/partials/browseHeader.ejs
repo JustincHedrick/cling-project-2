@@ -11,9 +11,10 @@
   <nav>
     <% if (user) {%>
       <div>Cling.</div>
-      <a href="/">Home</a>
-      <a href="/workouts">Train</a>    
-      <a href="workouts/show">Browse</a>
+      <!-- <a href="/">Home</a> -->
+      <a href="/workouts/new">Create</a>
+      <a href="/workouts/show">My Plans</a>    
+      <!-- <a href="/workouts">Browse</a> -->
       <a class="log-out" href="/logout">Log out</a>
     <%} else {%>
       <a href="/auth/google" class="login">Log in&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>

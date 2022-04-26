@@ -2,13 +2,11 @@ const mongoose = require('mongoose');
 // Optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
+
 const workoutSchema = new Schema({
-  user: { 
-    type: Schema.Types.ObjectId, ref: 'User', required: true
-  },
-  board: {
-    name: {type: String},
-    selected: {type: String, possibleValues: ['mk2', 'beast']}
+  boardUsed: {
+    type: Boolean,
+    default: false,
   },
   name: {
     type: String,
@@ -16,12 +14,10 @@ const workoutSchema = new Schema({
   },
   grip: {
     type: String,
-    enum: ['Jug', 'Sloper', 'Pinch', 'Open-hand', 'Half-crimp', 'Full-crimp'],
     required: true,
   },
   hold: {
     type: String,
-    enum: ['8mm', '10mm', '15mm', '20mm', '25mm', '30mm', '50mm', 'Top jug'],
     required: true,
   },
   set: {
@@ -32,7 +28,11 @@ const workoutSchema = new Schema({
     type: Number,
     required: true,
   },
-  hangTime: {
+  hTime: {
+    type: Number,
+    required: true,
+  },
+  rTime: {
     type: Number,
     required: true,
   },

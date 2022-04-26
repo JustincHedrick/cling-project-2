@@ -50,6 +50,16 @@ nav a {
   text-decoration: none;
 }
 
+nav > a:hover:not(.active) {
+  color: white;
+  background-color: #424748;
+}
+
+nav > a.active {
+  color: white;
+  cursor: default;
+}
+
 .big-container {
   display: flex;
   flex-direction: row;
