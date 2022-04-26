@@ -13,6 +13,17 @@ body {
   margin: 0;
 }
 
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
+}
+
 nav {
   display: flex;
   background-color: gray;

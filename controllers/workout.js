@@ -8,10 +8,11 @@ module.exports = {
 
 function create(req, res) {
   req.body.mk2 = !!req.body.mk2;
-  req.body.mk2 = !!req.body.beast;
+  req.body.beast = !!req.body.beast;
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body.key;
   }
+  req.body.user = req.body._id
   var workout = new Workout(req.body);
   workout.save(function(err) {
     if (err) return res.redirect('/workouts/new');
