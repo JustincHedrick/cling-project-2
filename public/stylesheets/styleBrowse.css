@@ -22,6 +22,7 @@ nav {
   align-items: center;
   top: 0px;
   margin-bottom: 10vmin;
+  border-bottom-left-radius: 25%;
 }
 
 nav > div {
@@ -54,15 +55,12 @@ nav a {
   margin-right: 2vmin;
 }
 
-#image-mk2, #image-2000 {
+.mk2 img, .beastMaker img{
   height: 25vmin;
   width: 35vmin;
   border-radius: 25% 25% 25% 25%;
 }
 
-#image-mk2:focus, #image-2000:focus {
-  border: 2px solid white;
-}
 
 .forms {
   display: flex;
@@ -74,15 +72,11 @@ nav a {
 .form-container {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   border: 1px solid white;
   height: 100%;
   width: 95%;
-}
-
-.form-container h2 {
-  margin-left: 2vmin;
 }
 
 .training-form {

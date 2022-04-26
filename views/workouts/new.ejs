@@ -3,21 +3,27 @@
 <div class="big-container">
   <div class="boards">
     <div class="tension">
+      <label for="mk2-boardCheck">
       <div class="mk2">
-        <input type="image" id="image-mk2" src="https://cdn.shortpixel.ai/spai/w_625+q_glossy+ret_img+to_webp/https://www.tensionclimbing.com/wp-content/uploads/2019/11/WEBfrontMK2.png">
+        <input type="radio" id="mk2-boardCheck" name="board" value="Mk2">
+        <img src="https://cdn.shortpixel.ai/spai/w_625+q_glossy+ret_img+to_webp/https://www.tensionclimbing.com/wp-content/uploads/2019/11/WEBfrontMK2.png">
       </div>
+      </label>
     </div>
     <div class="beast">
-      <div class="2000">
-        <input type="image" id="image-2000" src="https://cdn.shopify.com/s/files/1/0424/1145/products/BM-2000-Product_L1160638_800x.jpg?v=1624639590">
+      <label for="2000-boardCheck">
+      <div class="beastMaker">
+        <input type="radio" id="2000-boardCheck" name="board" value="beast">
+        <img src="https://cdn.shopify.com/s/files/1/0424/1145/products/BM-2000-Product_L1160638_800x.jpg?v=1624639590">
       </div>
+      </label>
     </div>
   </div>
   <div class="forms">
     <div class="form-container">
-      <h2>Create new training regimen with the (board name)</h2>
+      <h2>Create new plan</h2>
       <div class="training-form">
-        <form id="mk2-form" action="/workouts" method="POST">
+        <form id="new-form" action="/workouts" method="POST">
           <div class="name">
             <label>Regimen name</label>
             <input type="text" name="name">
@@ -193,6 +199,9 @@
               <input type="number" min="0" name="time" style="width: 7vmin">
               <label>Rest (m):</label>
               <input type="number" min="0" name="time" style="width: 7vmin">
+              <br>
+              <br>
+              <input type="submit" value="Add Plan">
             </div>
           </div>
         </form>
