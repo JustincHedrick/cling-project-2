@@ -7,6 +7,6 @@ const isLoggedIn = require('../config/auth')
 
 router.get('/', workoutCtrl.index);
 router.get('/new', workoutCtrl.new);
-router.post('/', isLoggedIn, workoutCtrl);
+router.post('/', isLoggedIn, workoutCtrl.create);
 
 module.exports = router;

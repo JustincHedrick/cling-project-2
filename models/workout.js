@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const workoutSchema = new Schema({
   board: {
     name: {type: String},
-    description: {type: String, possibleValues: ['']}
+    selected: {type: String, possibleValues: ['mk2', 'beast']}
   },
   name: {
     type: String,
@@ -33,7 +33,6 @@ const workoutSchema = new Schema({
     type: Number,
     required: true,
   },
-  timestampes: true,
 })
 
 module.exports = mongoose.model('Workout', workoutSchema);
