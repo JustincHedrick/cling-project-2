@@ -9,16 +9,9 @@ module.exports = {
 }
 
 function deleteWorkout(req, res, next) {
-  Workout.findOne(
-    {'workouts._id': req.body.id, 'workouts.user': req.user._id}.then(function(workout) {
-      if (!workout) return res.redirect('/workouts');
-      workout.remove(req.params.id);
-      workout.save().then(function() {
-        res.redirect('/workouts/index')
-      }).catch(function(err) {
-        return next(err);
-      })
-    })
+  req.body.user = req.user._id
+  Workout.findOneAndDelete(
+    {_id: req.params.id, }
   )
 };
 

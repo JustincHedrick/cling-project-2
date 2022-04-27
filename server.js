@@ -49,7 +49,7 @@ const isLoggedIn = require('./config/auth');
 app.use('/', indexRouter);
 app.use('/workouts', workoutRouter);
 app.use('/users', usersRouter);
-app.use('/', isLoggedIn, reviewsRouter);
+app.use('/', reviewsRouter);
 
 
 // catch 404 and forward to error handler
