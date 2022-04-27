@@ -13,11 +13,14 @@ const reviewSchema = new Schema({
     max: 5,
     default: 5
   },
-  user: {
-    type: Schema.Types.ObjectId, ref: 'User', require: true},
-  userName: String,
-  userAvatar: String, 
-})
+    user: {type: Schema.Types.ObjectId, ref: 'User', require: true},
+    userName: String,
+    userAvatar: String,
+}, {
+  // createdAt & updatedAt properties
+  timestamps: true
+});
+
 
 const workoutSchema = new Schema({
   boardUsed: {
@@ -56,6 +59,9 @@ const workoutSchema = new Schema({
     type: Schema.Types.ObjectId, ref: 'User', required: true,
   },
   reviews: [reviewSchema]
-})
+}, {
+  timestamps: true
+});
+
 
 module.exports = mongoose.model('Workout', workoutSchema);
