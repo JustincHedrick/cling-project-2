@@ -2,11 +2,10 @@ const mongoose = require('mongoose');
 // Optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
-
 const workoutSchema = new Schema({
   boardUsed: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   name: {
     type: String,
@@ -36,6 +35,9 @@ const workoutSchema = new Schema({
     type: Number,
     required: true,
   },
+  user: {
+    type: Schema.Types.ObjectId, ref: 'User', required: true,
+  }
 })
 
 module.exports = mongoose.model('Workout', workoutSchema);

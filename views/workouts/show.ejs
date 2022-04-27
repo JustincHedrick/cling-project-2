@@ -1,5 +1,21 @@
 <%- include('../partials/browseHeader') %>
 
-
+<section id="show-page">
+  <div>Name: </div>
+  <div><%= workout.name %></div>
+  <div>Hand position: </div>
+  <div><%= workout.grip %></div>
+  <div>Hold size: </div>
+  <div><%= workout.hold %></div>
+  <div>Set quantity: </div>
+  <div><%= workout.set %></div>
+  <div>Rep quantity</div>
+  <div><%= workout.rep %></div>
+  <div>Hang time:</div>
+  <div><%= workout.hTime %></div>
+  <div>Rest Time:</div>
+  <div><%= workout.rTime %></div>
+  <div>Created by:</div>
+  <div><%= workout.user %></div>
 
 <%- include('../partials/footer') %>
