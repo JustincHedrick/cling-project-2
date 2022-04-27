@@ -16,6 +16,29 @@
   <div>Rest Time:</div>
   <div><%= workout.rTime %></div>
   <div>Created by:</div>
-  <div><%= workout.user %></div>
+  <div><%= user.name %></div>
+  <br>
+  <br>
+  <h2>Leave a review</h2>
+  <% if (user) { %>
+    <form id="add-review-form" method="POST" action="/workouts/<%= workout._id %>/reviews">
+      <label>Review:</label>
+      <textarea name="content"></textarea>
+      <label>Rating:</label>
+      <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <input type="submit" value="add review">
+    </form>
+  <% } %>  
+  <br>
+  <% if (workout.reviews.length) { %>
+    
+  <% } %>
+
 
 <%- include('../partials/footer') %>
