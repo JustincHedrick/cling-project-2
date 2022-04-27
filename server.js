@@ -47,7 +47,7 @@ app.use(function(req, res, next) {
 const isLoggedIn = require('./config/auth');
 
 app.use('/', indexRouter);
-app.use('/workouts', isLoggedIn, workoutRouter);
+app.use('/workouts', workoutRouter);
 app.use('/users', usersRouter);
 app.use('/', isLoggedIn, reviewsRouter);
 
