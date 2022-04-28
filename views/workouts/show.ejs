@@ -52,13 +52,17 @@
       <% workout.reviews.forEach(function(c) { %>
         <% console.log(c._id) %>
         <tr>
-          <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>"><%= c.userName %></td>
+          <td class="review-user"><img alt="avatar" src="<%= c.userAvatar %>"><%= c.userName %></td>
           <td><%= c.createdAt.toLocaleDateString() %></td>
           <td><%= c.content %></td>
           <td>
             <% if (user && user._id.equals(c.user)) { %>
               <form action="/reviews/<%= c._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
+              </form>
+               <form action="/reviews/<%=c._id %>?_method=PUT" method="POST">
+                <input name="content" value="<%= c.content %>">
+                <button type="submit">EDIT COMMENT</button>
               </form>
             <% } %>
           </td>

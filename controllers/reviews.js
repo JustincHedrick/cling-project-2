@@ -3,8 +3,25 @@ const Workout = require('../models/workout')
 module.exports = {
   create,
   delete: deleteReview,
+  update
 }
 
+function update(req, res) {
+    Workout.findOne({'reviews._id': req.params.id}, function(err, workout) {
+        
+        // handle rougue user
+        // if (!playlist) return res.redirect(`/playlists/${playlist._id}`);
+        const review = workout.reviews.id(req.params.id);
+        console.log(review)
+        if (!workout.user.equals(req.user._id)) return res.redirect(`/workout/${workout._id}`);
+        console.log(review.content)
+        review.content = req.body.content;
+        workout.save(function(err) {
+          console.log(err)
+            res.redirect(`/workouts/${workout._id}`);
+        });
+    });
+}
 
 function deleteReview(req, res, next) {
   Workout.findOne({'reviews._id': req.params.id, 'reviews.user': req.user._id}).then(function (workout) 
@@ -26,7 +43,6 @@ function create(req, res) {
     req.body.userAvatar = req.user.avatar;
     workout.reviews.push(req.body);
     workout.save(function(err) {
-      console.log(workout)
       res.redirect(`/workouts/${workout._id}`)
     })
   })

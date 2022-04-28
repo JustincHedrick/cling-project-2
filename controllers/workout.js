@@ -6,14 +6,6 @@ module.exports = {
   show,
   create,
   delete: deleteWorkout,
-  edit,
-}
-
-function edit(req, res) {
-  Workout.findOne({'workouts._id': req.params.id, 'workouts.user': req.user._id}, function(err, workout) {
-    if (err || !workout) return res.redirect('/workouts');
-    res.render('workouts/edit', {workout});
-  });
 }
 
 function deleteWorkout(req, res, next) {
