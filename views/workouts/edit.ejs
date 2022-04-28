@@ -1,32 +1,11 @@
 <%- include('../partials/browseHeader') %>
 
-<div class="big-container">
-  <div class="boards">
-    <div class="tension">
-      <label for="mk2-boardCheck">
-      <div class="mk2">
-        <input type="checkbox" id="mk2-boardCheck" name="boardUsed" value="Mk2">
-        <img src="https://cdn.shortpixel.ai/spai/w_625+q_glossy+ret_img+to_webp/https://www.tensionclimbing.com/wp-content/uploads/2019/11/WEBfrontMK2.png">
-      </div>
-      </label>
-    </div>
-    <!-- <div class="beast">
-      <label for="2000-boardCheck">
-      <div class="beastMaker">
-        <input type="radio" id="2000-boardCheck" name="board" value="beast">
-        <img src="https://cdn.shopify.com/s/files/1/0424/1145/products/BM-2000-Product_L1160638_800x.jpg?v=1624639590">
-      </div>
-      </label>
-    </div> -->
-  </div>
   <div class="forms">
     <div class="form-container">
-      <h2>Create new plan</h2>
+      <h2>Edit <%= workout.name %></h2>
       <div class="training-form">
         <form id="new-form" action="/workouts" method="POST">
           <div class="name">
-            <label>Regimen name</label>
-            <input type="text" name="name">
             <label>Handboard used:</label>
             <input type="text" name="boardUsed">
           </div>
@@ -75,10 +54,5 @@
         </form>
       </div>
   </div>
-</div>
-
-<script>
-  
-</script>
 
 <%- include('../partials/footer') %>

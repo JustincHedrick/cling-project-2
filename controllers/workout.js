@@ -6,6 +6,14 @@ module.exports = {
   show,
   create,
   delete: deleteWorkout,
+  edit,
+}
+
+function edit(req, res) {
+  Workout.findOne({'workouts._id': req.params.id, 'workouts.user': req.user._id}, function(err, workout) {
+    if (err || !workout) return res.redirect('/workouts');
+    res.render('workouts/edit', {workout});
+  });
 }
 
 function deleteWorkout(req, res, next) {
@@ -22,11 +30,10 @@ function show(req, res) {
 }
 
 function create(req, res) {
-  // req.body.Mk2 = !!req.body.Mk2;
-  // req.body.beast = !!req.body.beast;
   req.body.user = req.user._id
   var workout = new Workout(req.body);
   workout.save(function(err) {
+    console.log(err);
     if (err) return res.redirect('/workouts/new');
     res.redirect(`/workouts/${workout._id}`);
   })

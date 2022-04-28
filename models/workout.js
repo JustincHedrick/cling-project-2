@@ -24,8 +24,7 @@ const reviewSchema = new Schema({
 
 const workoutSchema = new Schema({
   boardUsed: {
-    type: Boolean,
-    default: true,
+    type: String,
   },
   name: {
     type: String,

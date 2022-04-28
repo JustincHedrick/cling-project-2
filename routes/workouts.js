@@ -9,5 +9,6 @@ router.get('/new', workoutCtrl.new);
 router.get('/:id', workoutCtrl.show);
 router.post('/', isLoggedIn, workoutCtrl.create);
 router.delete('/:id', isLoggedIn, workoutCtrl.delete);
+router.get('/:id/edit', isLoggedIn, workoutCtrl.edit);
 
 module.exports = router;
