@@ -74,7 +74,7 @@ MongoDB Atlas | Express | EJS | Google Oauthorization 2.0 | Heroku | HTML5 | CSS
 
 <details open>   
 <summary>Deployed Link (Heroku)</summary>
-<a href="cling-proj-2.herokuapp.com/workouts" target="_blank">cling-proj-2.herokuapp.com/workouts</a>
+<a href="https://cling-proj-2.herokuapp.com/workouts" target="_blank">cling-proj-2.herokuapp.com/workouts</a>
 </details>
 
 ## Next Steps   
