@@ -11,7 +11,6 @@ function update(req, res) {
         const review = workout.reviews.id(req.params.id);
         console.log(review)
         if (!workout.user.equals(req.user._id)) return res.redirect(`/workouts/${workout._id}`);
-        console.log(review.content)
         review.content = req.body.content;
         workout.save(function(err) {
           console.log(err)
