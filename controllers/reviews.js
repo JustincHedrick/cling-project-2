@@ -10,7 +10,7 @@ function update(req, res) {
     Workout.findOne({'reviews._id': req.params.id}, function(err, workout) {
         const review = workout.reviews.id(req.params.id);
         console.log(review)
-        if (!workout.user.equals(req.user._id)) return res.redirect(`/workout/${workout._id}`);
+        if (!workout.user.equals(req.user._id)) return res.redirect(`/workouts/${workout._id}`);
         console.log(review.content)
         review.content = req.body.content;
         workout.save(function(err) {

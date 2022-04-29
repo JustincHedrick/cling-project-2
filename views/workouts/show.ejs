@@ -88,14 +88,13 @@
             <td><%= c.content %></td>
             <td>
               <% if (user && user._id.equals(c.user)) { %>
-                  <form action="/reviews/<%= c._id %>?_method=DELETE" method="POST">
-                  <button type="submit">X</button>
+                <form action="/reviews/<%= c._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
                 </form>
-                  <form action="/reviews/<%=c._id %>?_method=PUT" method="POST">
-                  <input name="content" value="<%= c.content %>">
-                  <button type="submit">EDIT COMMENT</button>
-                  </form>
-                
+                <form action="/reviews/<%=c._id %>?_method=PUT" method="POST">
+                <input name="content" value="<%= c.content %>">
+                <button type="submit">EDIT COMMENT</button>
+                </form>
               <% } %>
             </td>
           </tr>
