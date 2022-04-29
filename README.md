@@ -1,4 +1,4 @@
-# cling-project-2
+# Cling.
 
 <div align="center">
    <h1>Cling.</h1>
