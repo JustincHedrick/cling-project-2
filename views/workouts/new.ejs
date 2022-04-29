@@ -1,9 +1,10 @@
 <%- include('../partials/browseHeader') %>
 
 <div class="big-container">
-  <section>
-    <div>
-      <img src="https://imgur.com/a/wkylqBt.jpg">
+  <section class="img-section">
+    <div class="img-div">
+      <img id="img" src='https://s3.amazonaws.com/images.gearjunkie.com/uploads/2021/01/tension-climbing-grindstone-mk2.jpg'>
+      <img id="img" src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2021/01/beastmaker-hangboards.jpg">
     </div>
   </section>
   <div class="forms">
@@ -31,9 +32,8 @@
           </div>
             <br>
           <div class="select-all">
-            <div class="mk2-form">
               <label>Hold:</label>
-              <select name="hold">
+              <select name="hold" style="width: 13vmin">
                 <option value="choose">Select</option>
                 <option value="8mm">8mm</option>
                 <option value="10mm">10mm</option>
@@ -46,7 +46,7 @@
               </select>
 
             <label>Grip:</label>
-              <select name="grip">
+              <select name="grip" style="width: 13vmin">
                 <option value="choose">Select</option>
                 <option value="Jug">jug</option>
                 <option value="Sloper">sloper</option>
@@ -64,11 +64,12 @@
               <input type="number" min="0" name="hTime" style="width: 7vmin">
               <label>Rest (m):</label>
               <input type="number" min="0" name="rTime" style="width: 7vmin">
-            </div>
             
               <br>
               <br>
-              <input type="submit" value="Add Plan">
+              <div>
+                <input type="submit" value="Add Plan"   class="submit-btn">
+              </div>
             </div>
           </div>
         </form>

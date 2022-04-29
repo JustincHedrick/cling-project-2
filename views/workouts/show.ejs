@@ -1,80 +1,112 @@
 <%- include('../partials/browseHeader') %>
 
-<section id="show-page">
-  <div>Name: </div>
-  <div><%= workout.name %></div>
-  <div>Board used:</div>
-  <div><%= workout.boardUsed %></div>
-  <div>Intensity:</div>
-  <div><%= workout.intensity %></div>
-  <div>Hand position: </div>
-  <div><%= workout.grip %></div>
-  <div>Hold size: </div>
-  <div><%= workout.hold %></div>
-  <div>Set quantity: </div>
-  <div><%= workout.set %></div>
-  <div>Rep quantity</div>
-  <div><%= workout.rep %></div>
-  <div>Hang time:</div>
-  <div><%= workout.hTime %></div>
-  <div>Rest Time:</div>
-  <div><%= workout.rTime %></div>
-  <div>Created by:</div>
-  <div><%= user.name %></div>
-  <br>
-  <br>
-  <h2>Leave a review</h2>
-  <% if (user) { %>
-    <form id="add-review-form" method="POST" action="/workouts/<%= workout._id %>/reviews">
-      <label>Review:</label>
-      <textarea name="content"></textarea>
-      <label>Rating:</label>
-      <select name="rating">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <input type="submit" value="add review">
-    </form>
-  <% } %>  
-  <br>
- <% if (workout.reviews.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Date</th>
-        <th>Comment</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% let total = 0 %>
-      <% workout.reviews.forEach(function(c) { %>
-        <% console.log(c._id) %>
+  <div class="show-container">
+  <section id="show-page">
+      <div class="show-img">
+        <img src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2021/01/beastmaker-hangboards.jpg">
+      </div>
+      <div class="show-header">
+        <div>Name: </div>
+        <div><%= workout.name %></div>
+        <div>Board used:</div>
+        <div><%= workout.boardUsed %></div>
+        <div>Intensity:</div>
+        <div><%= workout.intensity %></div>
+      </div>
+      <div class="show body">
+        <div>
+          Hand position:
+          <%= workout.grip %>
+        </div>
+        <div>
+          Hold size: 
+          <%= workout.hold %>
+        </div>
+        <div>
+          Set quantity: 
+          <%= workout.set %>
+        <div>
+        <div>
+          Rep quantity
+          <%= workout.rep %>
+        </div>
+        <div>
+          Hang time:
+          <%= workout.hTime %>
+        </div>
+        <div>
+          Rest Time:
+          <%= workout.rTime %>
+        </div>
+        <div>
+          Created by:
+          <%= user.name %>
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
+    <section class="reviews-section">
+    <div class="review-header">
+      <h2>Leave a review</h2>
+    </div>
+    <div class="review-body">
+    <% if (user) { %>
+      <form id="add-review-form" method="POST" action="/workouts/<%= workout._id %>/reviews">
+        <label>Review:</label>
+        <textarea name="content"></textarea>
+        <label>Rating:</label>
+        <select name="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <input type="submit" value="add review">
+      </form>
+    <% } %>
+    </div>
+    <br>
+
+   <% if (workout.reviews.length) { %>
+    <table>
+      <thead>
         <tr>
-          <td class="review-user"><img alt="avatar" src="<%= c.userAvatar %>"><%= c.userName %></td>
-          <td><%= c.createdAt.toLocaleDateString() %></td>
-          <td><%= c.content %></td>
-          <td>
-            <% if (user && user._id.equals(c.user)) { %>
-              <form action="/reviews/<%= c._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-              </form>
-              <form action="/reviews/<%=c._id %>?_method=PUT" method="POST">
-                <input name="content" value="<%= c.content %>">
-                <button type="submit">EDIT COMMENT</button>
-              </form>
-            <% } %>
-          </td>
+          <th>User</th>
+          <th>Date</th>
+          <th>Comment</th>
         </tr>
-      <% }); %>
-    </tbody>
-  </table>
-<% } else { %>
-  <h5>No Comments Yet</h5>
-<% } %>
+      </thead>
+      <tbody>
+        <% let total = 0 %>
+        <% workout.reviews.forEach(function(c) { %>
+          <% console.log(c._id) %>
+          <tr>
+            <td class="review-user"><img alt="avatar" src="<%= c.userAvatar %>"><%= c.userName %></td>
+            <td><%= c.createdAt.toLocaleDateString() %></td>
+            <td><%= c.content %></td>
+            <td>
+              <% if (user && user._id.equals(c.user)) { %>
+                  <form action="/reviews/<%= c._id %>?_method=DELETE" method="POST">
+                  <button type="submit">X</button>
+                </form>
+                  <form action="/reviews/<%=c._id %>?_method=PUT" method="POST">
+                  <input name="content" value="<%= c.content %>">
+                  <button type="submit">EDIT COMMENT</button>
+                  </form>
+                
+              <% } %>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Comments Yet</h5>
+  <% } %>
+  </section>
+</div>
 
 
 <%- include('../partials/footer') %>
