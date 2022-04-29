@@ -1,24 +1,68 @@
 <%- include('../partials/browseHeader') %>
+<% if (user) { %>
+<div class="index-big-container">
 
-<% if (user) {%>
-  <table id="list">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% workouts.forEach(function(w) { %>
-      <tr>
-        <td><%= w.name %></td>
-        <td>
-          <a href="/workouts/<%= w._id %>">DETAILS</a>
-        </form>
-        </td>
-      </tr>  
-      <% }); %>
-    </tbody>
-  </table>
+  <div class="all-browse">
+    <section class="all-container">
+      <div class="table-header">User created plans</div>  
+    <% if (user) {%>
+      <table id="list">
+      <thead>
+        <tr class="all-top-row">
+          <th>Name</th>
+          <th>Created by: </th>
+          <th>Intensity: </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% workouts.forEach(function(w) { %>
+          <tr>
+            <td><%= w.name %></td>
+            <td><%= w.userName %></td>
+            <td><%= w.intensity %></td>
+            <td>
+              <a href="/workouts/<%= w._id %>" id="all-a">DETAILS</a>
+            </form>
+            </td>
+          </tr>  
+          <% }); %>
+        </tbody>
+      </table>
     <%}%>
+    </section>
+  </div>
+
+  <div class="user-browse">
+    <section class="user-container">
+      <div class="table-header">My Created Plans</div>
+    <table id="list">
+      <thead>
+        <tr class="all-top-row">
+          <th>Name</th>
+          <th>Created by:</th>
+          <th>Intensity:</th>
+        </tr>
+      </thead>
+    <% workouts.forEach(function(c) { %>
+    <%  if (user && user._id.equals(c.user._id)) { %>
+      <% console.log(user._id) %>
+      <% console.log(c.user._id) %>
+        <tbody>
+          <tr>
+            <td><%= c.name %></td>
+            <td><%= c.userName %></td>
+            <td><%= c.intensity %></td>
+            <td>
+              <a href="/workouts/<%= c._id %> " id="user-a">DETAILS</a>
+            </form>
+            </td>
+          </tr>
+        <% } %>
+        </tbody>
+      </table>
+      <% }); %>
+      </section>
+  </div>
+</div>
+<% } %>
 <%- include('../partials/footer') %>

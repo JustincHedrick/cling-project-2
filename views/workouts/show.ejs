@@ -4,7 +4,9 @@
   <div>Name: </div>
   <div><%= workout.name %></div>
   <div>Board used:</div>
-  <div><% workout.boardUsed %></div>
+  <div><%= workout.boardUsed %></div>
+  <div>Intensity:</div>
+  <div><%= workout.intensity %></div>
   <div>Hand position: </div>
   <div><%= workout.grip %></div>
   <div>Hold size: </div>
@@ -60,7 +62,7 @@
               <form action="/reviews/<%= c._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>
-               <form action="/reviews/<%=c._id %>?_method=PUT" method="POST">
+              <form action="/reviews/<%=c._id %>?_method=PUT" method="POST">
                 <input name="content" value="<%= c.content %>">
                 <button type="submit">EDIT COMMENT</button>
               </form>

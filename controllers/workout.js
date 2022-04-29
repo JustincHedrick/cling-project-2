@@ -22,7 +22,8 @@ function show(req, res) {
 }
 
 function create(req, res) {
-  req.body.user = req.user._id
+  req.body.user = req.user._id;
+  req.body.userName = req.user.name;
   var workout = new Workout(req.body);
   workout.save(function(err) {
     console.log(err);

@@ -23,12 +23,12 @@ const reviewSchema = new Schema({
 
 
 const workoutSchema = new Schema({
-  boardUsed: {
-    type: String,
-  },
   name: {
     type: String,
     required: true,
+  },
+  boardUsed: {
+    type: String,
   },
   grip: {
     type: String,
@@ -54,8 +54,16 @@ const workoutSchema = new Schema({
     type: Number,
     required: true,
   },
+  intensity: {
+    type: Number,
+    required: true,
+  },
   user: {
     type: Schema.Types.ObjectId, ref: 'User', required: true,
+    userName: String,
+  },
+  userName: {
+    type: String
   },
   reviews: [reviewSchema],
 }, {

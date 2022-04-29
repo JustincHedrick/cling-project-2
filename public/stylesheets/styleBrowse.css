@@ -12,7 +12,7 @@ body {
   height: 100vh;
   margin: 0;
 }
-
+/* nav CSS */
 .login {
   display: flex;
   justify-content: center;
@@ -52,36 +52,23 @@ nav a {
 
 nav > a:hover:not(.active) {
   color: white;
-  background-color: #424748;
+  background-color: #5D76A9;
+  border-radius: 5%;
 }
 
 nav > a.active {
   color: white;
-  cursor: default;
+  cursor: crosshair;
 }
 
+/* newly created css */
 .big-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 175vmin;
   height: 70vmin;
 }
-
-.boards {
-  display: flex;
-  flex-direction: column;
-  justify-content:space-evenly;
-  width: 20%;
-  margin-right: 2vmin;
-}
-
-.mk2 img, .beastMaker img{
-  height: 25vmin;
-  width: 35vmin;
-  border-radius: 25% 25% 25% 25%;
-}
-
 
 .forms {
   display: flex;
@@ -122,6 +109,64 @@ nav > a.active {
   flex-direction: column;
 }
 
-.mk2-form {
-  margin: 1vmin;
+.index-big-container{
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
 }
+
+.table-header {
+  display: flex;
+  justify-content: center;
+}
+
+#list {
+  margin: 1em 0;
+  border-collapse: collapse;
+  background-color: #5D76A9;
+  border-radius: 20px;
+}
+
+th, td {
+  padding: 0.25em 0.5em 0.25em 1em;
+  vertical-align: text-top;
+  text-align: left;
+  text-indent: -0.5em;
+}
+
+th {
+  vertical-align: bottom;
+  background-color: #666;
+  color: #fff;
+}
+
+#all-a, #user-a{
+  color: black;
+  text-decoration: none;
+}
+
+#all-a:hover, #user-a:hover {
+  text-decoration: underline;
+}
+
+/* MY created plans */
+
+#user-list {
+  margin: 1em 0;
+  border-collapse: collapse;
+  background-color: #5D76A9;
+}
+
+th, td {
+  padding: 0.25em 0.5em 0.25em 1em;
+  vertical-align: text-top;
+  text-align: left;
+  text-indent: -0.5em;
+}
+
+th {
+  vertical-align: bottom;
+  background-color: #666;
+  color: #fff;
+}
+

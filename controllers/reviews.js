@@ -8,9 +8,6 @@ module.exports = {
 
 function update(req, res) {
     Workout.findOne({'reviews._id': req.params.id}, function(err, workout) {
-        
-        // handle rougue user
-        // if (!playlist) return res.redirect(`/playlists/${playlist._id}`);
         const review = workout.reviews.id(req.params.id);
         console.log(review)
         if (!workout.user.equals(req.user._id)) return res.redirect(`/workout/${workout._id}`);

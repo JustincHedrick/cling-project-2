@@ -1,24 +1,11 @@
 <%- include('../partials/browseHeader') %>
 
 <div class="big-container">
-  <div class="boards">
-    <div class="tension">
-      <label for="mk2-boardCheck">
-      <div class="mk2">
-        <input type="checkbox" id="mk2-boardCheck" name="boardUsed" value="Mk2">
-        <img src="https://cdn.shortpixel.ai/spai/w_625+q_glossy+ret_img+to_webp/https://www.tensionclimbing.com/wp-content/uploads/2019/11/WEBfrontMK2.png">
-      </div>
-      </label>
+  <section>
+    <div>
+      <img src="https://imgur.com/a/wkylqBt.jpg">
     </div>
-    <!-- <div class="beast">
-      <label for="2000-boardCheck">
-      <div class="beastMaker">
-        <input type="radio" id="2000-boardCheck" name="board" value="beast">
-        <img src="https://cdn.shopify.com/s/files/1/0424/1145/products/BM-2000-Product_L1160638_800x.jpg?v=1624639590">
-      </div>
-      </label>
-    </div> -->
-  </div>
+  </section>
   <div class="forms">
     <div class="form-container">
       <h2>Create new plan</h2>
@@ -28,7 +15,19 @@
             <label>Regimen name</label>
             <input type="text" name="name">
             <label>Handboard used:</label>
-            <input type="text" name="boardUsed">
+            <select name="boardUsed">
+              <option value="Tension Mk2">Tension Mk2</option>
+              <option value="Beastmaker 2000">Beastmaker 2000</option>
+            </select>
+            <label>Intensity</label>
+            <select name="intensity">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
           </div>
             <br>
           <div class="select-all">
