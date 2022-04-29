@@ -10,6 +10,8 @@ function update(req, res) {
     Workout.findOne({'reviews._id': req.params.id}, function(err, workout) {
         const review = workout.reviews.id(req.params.id);
         if (!workout) return res.redirect(`/workouts/${workout._id}`);
+        console.log(review)
+        if (!workout) return res.redirect(`/workout/${workout._id}`);
         review.content = req.body.content;
         workout.save(function(err) {
           console.log(err)
