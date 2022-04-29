@@ -1,7 +1,5 @@
 # cling-project-2
 
-# Blackjack
-
 <div align="center">
    <h1>Cling.</h1>
    <h3>cling-proj-2.herokuapp.com/workouts</h3>
